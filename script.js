@@ -7,7 +7,7 @@ const intialMarkdown = `
 ##### Header 5
 ### List 
 1 List biscuits
-2 List vegtebals
+2 List vegetables
 3 List fruits 
 4 List drinks
 ### Links
