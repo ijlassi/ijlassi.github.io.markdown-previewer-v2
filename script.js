@@ -53,20 +53,20 @@ class App extends React.Component {
   }
 
   parseMarkdown(text) {
-    const htmlText = text.
-    replace(/^##### (.*$)/gim, '<h5>$1</h5>').
-    replace(/^#### (.*$)/gim, '<h4>$1</h4>').
-    replace(/^### (.*$)/gim, '<h3>$1</h3>').
-    replace(/^## (.*$)/gim, '<h2>$1</h2>').
-    replace(/^# (.*$)/gim, '<h1>$1</h1>').
-    replace(/^>(.+)/gm, '<blockquote> $1 </blockquote>').
-    replace(/\*\*(.*)\*\*/gim, '<b>$1</b><br />').
-    replace(/\*(.*)\*/gim, '<i>$1</i><br />').
-    replace(/^[0-9] (.*$)/gim, '<ul><li> $1 </li></ul>').
-    replace(/!\[([^\]]+)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" /><br />').
-    replace(/\[(.*?)\]\((.*?)\)/gim, "<a href='$2'>$1</a><br />").
-    replace(/[`]{3}([^`]+)[`]{3}/gim, '<code> $1 </code><br />').
-    replace(/\n$/gim, '<br />');
+    const htmlText = text
+      .replace(/^##### (.*$)/gim, '<h5>$1</h5><pre />')
+      .replace(/^#### (.*$)/gim, '<h4>$1</h4><pre />')
+      .replace(/^### (.*$)/gim, '<h3>$1</h3><pre/>')
+      .replace(/^## (.*$)/gim, '<h2>$1</h2><pre />')
+      .replace(/^# (.*$)/gim, '<h1>$1</h1><pre />')
+      .replace(/^>(.+)/gm, '<blockquote> $1 </blockquote><pre />')
+      .replace(/\*\*(.*)\*\*/gim, '<b>$1</b>')
+      .replace(/\*(.*)\*/gim, '<i>$1</i>')
+      .replace(/^[0-9] (.*$)/gim, '<ul><li> $1 </li></ul><pre />')
+      .replace(/!\[([^\]]+)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" /><pre />')
+      .replace(/\[(.*?)\]\((.*?)\)/gim, "<a href='$2'>$1</a><pre />")
+      .replace(/[`]{3}([^`]+)[`]{3}/gim, '<code> $1 </code><pre />')
+      .replace(/\n$/gim, '<pre />');
 
     return htmlText.trim();
   }
