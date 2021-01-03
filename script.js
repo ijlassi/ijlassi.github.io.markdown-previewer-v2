@@ -1,16 +1,23 @@
 const intialMarkdown = ` 
 ### Headers
+
 # Header 1
 ## Header 2
 ### Header 3
 #### Header 4
 ##### Header 5
 ### List 
+
 1 List biscuits
+
 2 List vegetables
+
 3 List fruits 
+
 4 List drinks
+
 ### Links
+
 [Facebook](facebook.com)
 
 [Instagram](instagram.com)
@@ -18,26 +25,27 @@ const intialMarkdown = `
 [Twitter](twitter.com/)
 
 ### Text Decorations 
-*italic* 
 
-**bold** 
+  *italic* 
 
-*** bold and italic*** 
+  **bold**
+
+ *** bold and italic*** 
+
 ### Images 
+
 ![image](https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg "so nice view")
 
 ### Blockquote 
->The future belongs to those who believe in the beauty of their dreams.
+
+>We accept the love we think we deserve.
 ### Code 
 \`\`\`
-function addTwoNumbers(a,b) {
->return a+b
-}
-
-const name ="iness"
-
-
-const age= "27"
+ function addTwoNumbers(a,b) {
+    return a+b
+ }
+ const name ="iness"
+ const age= "27"
 \`\`\`
 `;
 
