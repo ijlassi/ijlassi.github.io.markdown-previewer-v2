@@ -1,44 +1,27 @@
 const intialMarkdown = ` 
 ### Headers
-
 # Header 1
 ## Header 2
 ### Header 3
 #### Header 4
 ##### Header 5
 ### List 
-
 1 List biscuits
-
 2 List vegetables
-
 3 List fruits 
-
 4 List drinks
-
 ### Links
-
 [Facebook](facebook.com)
-
 [Instagram](instagram.com)
-
 [Twitter](twitter.com/)
-
 ### Text Decorations 
-
   *italic* 
-
   **bold**
-
- *** bold and italic*** 
-
+ *** bold and italic***
 ### Images 
-
 ![image](https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg "so nice view")
-
 ### Blockquote 
-
->We accept the love we think we deserve.
+  The future belongs to those who believe in the beauty of their dreams.
 ### Code 
 \`\`\`
  function addTwoNumbers(a,b) {
@@ -47,8 +30,7 @@ const intialMarkdown = `
  const name ="iness"
  const age= "27"
 \`\`\`
-`;
-
+`
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -62,20 +44,19 @@ class App extends React.Component {
 
   parseMarkdown(text) {
     const htmlText = text
-      .replace(/^##### (.*$)/gim, '<h5>$1</h5><pre />')
-      .replace(/^#### (.*$)/gim, '<h4>$1</h4><pre />')
-      .replace(/^### (.*$)/gim, '<h3>$1</h3><pre/>')
-      .replace(/^## (.*$)/gim, '<h2>$1</h2><pre />')
-      .replace(/^# (.*$)/gim, '<h1>$1</h1><pre />')
-      .replace(/^>(.+)/gm, '<blockquote> $1 </blockquote><pre />')
+      .replace(/^##### (.*$)/gim, '<h5>$1</h5>')
+      .replace(/^#### (.*$)/gim, '<h4>$1</h4>')
+      .replace(/^### (.*$)/gim, '<span><h3>$1</h3></span>')
+      .replace(/^## (.*$)/gim, '<h2>$1</h2>')
+      .replace(/^# (.*$)/gim, '<h1>$1</h1>')
+      .replace(/^>(.+)/gm, '<blockquote> $1 </blockquote>')
       .replace(/\*\*(.*)\*\*/gim, '<b>$1</b>')
-      .replace(/\*(.*)\*/gim, '<i>$1</i>')
-      .replace(/^[0-9] (.*$)/gim, '<ul><li> $1 </li></ul><pre />')
-      .replace(/!\[([^\]]+)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" /><pre />')
-      .replace(/\[(.*?)\]\((.*?)\)/gim, "<a href='$2'>$1</a><pre />")
-      .replace(/[`]{3}([^`]+)[`]{3}/gim, '<code> $1 </code><pre />')
-      .replace(/\n$/gim, '<pre />');
-
+      .replace(/\*(.*)\*/gim, '<p><i>$1</i></p>')
+      .replace(/^[0-9] (.*$)/gim, '<p><ul><li> $1 </li></ul></p>')
+      .replace(/!\[([^\]]+)\]\(([^)]+)\)/g, '<img src="$2" alt="$1" />')
+      .replace(/\[(.*?)\]\((.*?)\)/gim, "<span><a href='$2'>$1</a></span>")
+      .replace(/[`]{3}([^`]+)[`]{3}/gim, '<pre><code> $1 </code></pre>')
+      .replace(/\n$/gim, '<br />');
     return htmlText.trim();
   }
 
