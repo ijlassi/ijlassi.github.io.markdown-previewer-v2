@@ -155,18 +155,26 @@ img {
 }
 
 @media screen and (max-width: 1000px) {
-    .container {
-        display: block;
-        width: 100%;
-    }
-    #editor {
-        width: 90vw;
-        height: 35vh;
-        margin: 2px;
-    }
-    #preview {
-        width: 90.4vw;
-        height: 35.3vh;
-        margin: 2px;
-    }
+   #title {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 15px; 
+   }
+   .container{
+    display: block;
+     width: 100%;
+      margin-top: 5px;
+    justify-content: center;
+   }
+   #editor{
+      width: 90vw;
+      height: 35.3vh;
+      margin: 2px ;
+   }
+   #preview{
+      width: 90.4vw;
+      height: 35.3vh;
+      margin: 22px 2px ;
+   }
 }
